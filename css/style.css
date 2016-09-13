@@ -1,0 +1,306 @@
+html,
+body {
+	font-size: 16px;
+	font-family: Lato;
+	font-weight: 300;
+	color: #333;
+}
+
+.mirada {
+	position: fixed;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	z-index: 99999;
+	background-color: white;
+}
+
+.mirada .top-wrapper {
+	position: absolute;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 35px;
+	line-height: 35px;
+	text-align: center;
+	background-color: rgb(60,130,250);
+	color: white;
+	box-shadow: 0 2px 2px rgba(150,150,150,.8);
+	z-index: 99999;
+	/*outline: 1px solid #555;*/
+}
+
+.mirada .message-wrapper {
+	position: absolute;
+	left: 0;
+	top: 35px;
+	width: 100%;
+	height: calc(80% - 35px);
+	overflow: auto;
+}
+
+.mirada .message-wrapper .message {
+	padding: 1rem 1rem;
+	border-bottom: 1px solid #eee;
+}
+
+.mirada .message-wrapper .message:nth-child(odd) {
+	/*background-color: #fafafa;*/
+}
+
+.mirada .message-wrapper .message:nth-child(even) {
+	/*background-color: white;*/
+}
+
+.mirada .message-wrapper .message > * {
+	display: inline-block;
+	vertical-align: top;
+}
+
+.mirada .message-wrapper .message > .avatar {
+	background-repeat: no-repeat;
+	background-size: contain;
+	width: 40px;
+	height: 40px;
+	border-radius: 3px;
+	box-shadow: 1px 1px 2px #ccc;
+}
+
+.mirada .message-wrapper .message.user > .avatar {
+	background-image: url('../image/avatar.jpg');
+}
+
+.mirada .message-wrapper .message.cisco > .avatar {
+	background-image: url('../image/cisco.gif');
+}
+
+.mirada .message-wrapper .message > .content {
+	color: #444;
+	font-size: 1rem;
+	font-weight: 400;
+	padding: .2rem 0 .2rem 30px;
+	width: calc(100% - 130px);
+}
+
+.mirada .message-wrapper .message > .time {
+	float: right;
+	color: #888;
+	font-size: .8rem;
+	width: 60px;
+	text-align: right;
+}
+
+.mirada .message-wrapper .message .table {
+	margin: 20px 0;
+	padding: 20px 0;
+	background-color: #f5f6f8;
+	font-weight: 300;
+}
+
+.mirada .message-wrapper .message .table .row:not(:first-child) {
+	margin-top: 30px;
+}
+
+.mirada .message-wrapper .message .table .row > * {
+	vertical-align: top;
+	display: inline-block;
+}
+
+.mirada .message-wrapper .message .table .row > .title {
+	box-sizing: border-box;
+	width: 15%;
+	padding-right: 1rem;
+	/*background-color: rgb(60,130,250);*/
+	color: rgb(60,130,250);
+	text-align: right;
+	text-transform: uppercase;
+	font-weight: 400;
+}
+
+.mirada .message-wrapper .message .table .content {
+	box-sizing: border-box;
+	width: 85%;
+	padding: .5rem 1rem;
+	border-left: 1px solid #ccc;
+	color: #555;
+	font-weight: 400;
+}
+
+.mirada .message-wrapper .message .table .progress {
+	width: 100%;
+	max-width: 500px;
+}
+
+.mirada .message-wrapper .message .table .progress > * {
+	vertical-align: top;
+	display: inline-block;
+}
+
+.mirada .message-wrapper .message .table .progress .text {
+	width: 50px;
+	text-align: right;
+	color: rgb(60,130,250);
+}
+
+.mirada .message-wrapper .message .table .progress .bar {
+	height: 20px;
+	width: calc(100% - 50px);
+	background-color: #e5e5e5;
+	border-radius: 3px;
+}
+
+.mirada .message-wrapper .message .table .progress .bar .fill {
+	width: 60%;
+	height: 20px;
+	background-color: rgb(60,130,250);
+	border-radius: 3px;
+}
+
+.mirada .message-wrapper .message .table .file {
+	background-color: #f5f6eb;
+	width: 100%;
+	max-width: 400px;
+	height: 100px;
+}
+
+.mirada .message-wrapper .message .table .file > * {
+	vertical-align: top;
+	display: inline-block;
+}
+
+.mirada .message-wrapper .message .table .file .icon {
+	width: 100px;
+	background-position: center;
+	background-size: 50%;
+	background-repeat: no-repeat;
+}
+
+.mirada .message-wrapper .message .table .file .icon::after {
+	content: '';
+	display: block;
+	padding-bottom: 100%;
+}
+
+.mirada .message-wrapper .message .table .file .icon.ppt {
+	background-image: url('../image/ppt.svg');
+}
+
+.mirada .message-wrapper .message .table .file .details {
+	width: calc(100% - 100px);
+	height: 100%;
+}
+
+.mirada .message-wrapper .message .table .file .details > * {
+	vertical-align: top;
+	display: inline-block;
+	height: 100%;
+}
+
+.mirada .message-wrapper .message .table .file .title {
+	box-sizing: border-box;
+	padding: 1rem;
+	width: calc(100% - 80px);
+}
+
+.mirada .message-wrapper .message .table .file .download {
+	width: 80px;
+	background-image: url('../image/download.svg');
+	background-position: center;
+	background-size: 50%;
+	background-repeat: no-repeat;
+	transition: all ease .2s;
+}
+
+.mirada .message-wrapper .message .table .file .download::after {
+	content: '';
+	display: block;
+	padding-bottom: 100%;
+}
+
+.mirada .message-wrapper .message .table .file .download:hover {
+	cursor: pointer;
+	background-color: #f0f1e6;
+}
+
+.mirada .state-wrapper {
+	display: none;
+	position: absolute;
+	left: 50%;
+	bottom: calc(20% + 30px);
+	width: 100%;
+	max-width: 200px;
+	background-color: rgba(100,100,100,.8);
+	line-height: 30px;
+	font-size: .9rem;
+	text-align: center;
+	color: white;
+	border-radius: 3px;
+	transform: translateX(-50%);
+}
+
+.mirada .bottom-wrapper {
+	position: absolute;
+	left: 0;
+	bottom: 0;
+	width: 100%;
+	height: 20%;
+	max-height: 300px;
+	padding: 1.5rem;
+	box-sizing: border-box;
+	outline: 1px solid #ccc;
+	background-color: #fafafa;
+	box-shadow: 0 -1px 1px #ccc;
+}
+
+.mirada .bottom-wrapper textarea {
+	vertical-align: top;
+	display: inline-block;
+	width: 70%;
+	height: 100%;
+	outline: none;
+	/*border: 2px solid #ddd;*/
+	border: none;
+	padding: .5rem .8rem;
+	box-sizing: border-box;
+	font-size: 1rem;
+	font-weight: 300;
+	resize: none;
+	/*border-radius: 3px;*/
+	background-color: inherit;
+}
+
+.mirada .bottom-wrapper textarea:focus {
+	border-color: rgb(100,160,250);
+}
+
+.mirada .control-wrapper {
+	vertical-align: top;
+	display: inline-block;
+	width: 30%;
+	height: 100%;
+	box-sizing: border-box;
+	/*border: 1px solid black;*/
+	padding: .2rem 0 .2rem 1rem;
+}
+
+.mirada .control-wrapper > * {
+	display: inline-block;
+	vertical-align: top;
+}
+
+.mirada .control-wrapper .avatar {
+	background-image: url('../image/avatar.jpg');
+	background-repeat: no-repeat;
+	background-size: contain;
+	width: 30%;
+	height: 100%;
+	border-radius: 3px;
+}
+
+.mirada .control-wrapper .info {
+	width: 60%;
+	height: 100%;
+	font-weight: 300;
+	text-align: center;
+}
