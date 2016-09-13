@@ -27,7 +27,7 @@ function sendMessage(message) {
 	addContent('user', message);
 	setTimeout(function() {
 		showTyping();
-		setTimeout(function() { showResponse(messageID, 'Shawn is the bitch!') }, 1500);
+		setTimeout(function() { showResponse(messageID, "Of course, let me think for a second.") }, 1500);
 	}, 500);
 }
 
