@@ -27,7 +27,7 @@ function sendMessage(message) {
 	addContent('user', message);
 	setTimeout(function() {
 		showTyping();
-		setTimeout(function() { showResponse(messageID, 'Shawn is the bitch!') }, 1500);
+		setTimeout(function() { mh.sendMessage(''); }, 500);
 	}, 500);
 }
 
@@ -57,7 +57,7 @@ function showTypingAnimation(no) {
 	setTimeout(function() { showTypingAnimation(no) }, 300);
 }
 
-function showResponse(id, content) {
+function showResponse(content) {
 	hideTypeing();
 	addContent('cisco', content);
 }

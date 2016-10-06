@@ -42,15 +42,15 @@ body {
 
 .mirada .message-wrapper .message {
 	padding: 1rem 1rem;
-	border-bottom: 1px solid #eee;
-}
-
-.mirada .message-wrapper .message:nth-child(odd) {
-	/*background-color: #fafafa;*/
+	/*border-bottom: 1px solid #eee;*/
 }
 
 .mirada .message-wrapper .message:nth-child(even) {
-	/*background-color: white;*/
+	background-color: #fafafa;
+}
+
+.mirada .message-wrapper .message:nth-child(odd) {
+	background-color: white;
 }
 
 .mirada .message-wrapper .message > * {
@@ -92,9 +92,9 @@ body {
 }
 
 .mirada .message-wrapper .message .table {
-	margin: 20px 0;
+	/*margin: 20px 0;*/
 	padding: 20px 0;
-	background-color: #f5f6f8;
+	/*background-color: #f5f6f8;*/
 	font-weight: 300;
 }
 
@@ -114,8 +114,8 @@ body {
 	/*background-color: rgb(60,130,250);*/
 	color: rgb(60,130,250);
 	text-align: right;
-	text-transform: uppercase;
-	font-weight: 400;
+	text-transform: capitalize;
+	font-weight: 600;
 }
 
 .mirada .message-wrapper .message .table .content {
@@ -151,7 +151,7 @@ body {
 }
 
 .mirada .message-wrapper .message .table .progress .bar .fill {
-	width: 60%;
+	width: 40%;
 	height: 20px;
 	background-color: rgb(60,130,250);
 	border-radius: 3px;
@@ -182,7 +182,7 @@ body {
 	padding-bottom: 100%;
 }
 
-.mirada .message-wrapper .message .table .file .icon.ppt {
+.mirada .message-wrapper .message .table .file .icon.pptx {
 	background-image: url('../image/ppt.svg');
 }
 
@@ -223,6 +223,58 @@ body {
 	background-color: #f0f1e6;
 }
 
+.mirada .message-wrapper .message .table a {
+	color: #666;
+	text-decoration: underline;
+}
+
+.mirada .message-wrapper .message .table a:hover {
+	color: #333;
+}
+
+.mirada .message-wrapper .message .table .namecard {
+	display: inline-block;
+	width: 40%;
+	border: 1px solid #ddd;
+	padding: 1.5rem;
+	position: relative;
+	border-radius: 3px;
+}
+
+.mirada .message-wrapper .message .table .namecard:nth-child(2n-1) {
+	margin-right: 2%;
+}
+
+.mirada .message-wrapper .message .table .namecard .subtitle {
+	text-transform: uppercase;
+	font-size: .9rem;
+	margin-bottom: 2rem;
+	color: #888;
+}
+
+.mirada .message-wrapper .message .table .namecard .avatar {
+	position: absolute;
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: center;
+	right: 1rem;
+	top: 15%;
+	width: 25%;
+	height: 70%;
+}
+
+.mirada .message-wrapper .message .table .namecard .tc {
+	background-image: url('../image/avatar-1.jpg');
+}
+
+.mirada .message-wrapper .message .table .namecard .nc {
+	background-image: url('../image/avatar-2.jpg');
+}
+
+.mirada .message-wrapper .message .table .namecard .entry {
+	margin-top: .3rem;
+}
+
 .mirada .state-wrapper {
 	display: none;
 	position: absolute;
@@ -244,7 +296,7 @@ body {
 	left: 0;
 	bottom: 0;
 	width: 100%;
-	height: 20%;
+	height: 15%;
 	max-height: 300px;
 	padding: 1.5rem;
 	box-sizing: border-box;
@@ -256,7 +308,7 @@ body {
 .mirada .bottom-wrapper textarea {
 	vertical-align: top;
 	display: inline-block;
-	width: 70%;
+	width: 80%;
 	height: 100%;
 	outline: none;
 	/*border: 2px solid #ddd;*/
@@ -277,7 +329,7 @@ body {
 .mirada .control-wrapper {
 	vertical-align: top;
 	display: inline-block;
-	width: 30%;
+	width: 20%;
 	height: 100%;
 	box-sizing: border-box;
 	/*border: 1px solid black;*/
@@ -303,4 +355,10 @@ body {
 	height: 100%;
 	font-weight: 300;
 	text-align: center;
+}
+
+/* Specific Messages */
+
+#message-acc {
+	display: none;
 }
