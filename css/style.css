@@ -64,7 +64,8 @@ body {
 	width: 40px;
 	height: 40px;
 	border-radius: 3px;
-	box-shadow: 1px 1px 2px #ccc;
+	/*box-shadow: 1px 1px 2px #ccc;*/
+	border: 1px solid #eee;
 }
 
 .mirada .message-wrapper .message.user > .avatar {
@@ -89,6 +90,31 @@ body {
 	font-size: .8rem;
 	width: 60px;
 	text-align: right;
+}
+
+.mirada .message-wrapper .message .feedback {
+	margin-top: 15px;
+}
+
+.mirada .message-wrapper .message .feedback .button {
+	display: inline-block;
+	margin-right: 15px;
+	padding: 5px 30px;
+	border: 1px solid #ccc;
+	border-radius: 5px;
+	font-size: 13px;
+	color: #779;
+}
+
+.mirada .message-wrapper .message .feedback .button:hover {
+	cursor: pointer;
+	border-color: #aaa;
+	background: #f8f8f8;
+}
+
+.mirada .message-wrapper .message .feedback .button.highlight {
+	background: #eee;
+	color: #555;
 }
 
 .mirada .message-wrapper .message .table {

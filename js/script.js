@@ -21,6 +21,7 @@ var $state = $('#state');
 var messageID = 0, isTyping = false;
 
 addContent('cisco', "Hi Mitchell! I'm Mirada. It's my pleasure to talk to you.");
+addFeedback();
 replyACC();
 
 function sendMessage(message) {
@@ -60,11 +61,20 @@ function showTypingAnimation(no) {
 function showResponse(content) {
 	hideTypeing();
 	addContent('cisco', content);
+
+	// Add Feedback
 }
 
 function addContent(source, content) {
 	var $message = $('#message');
-	$message.append('<div id="message-' + (++messageID) + '" class="message ' + source + '"><div class="avatar"></div><div class="content">' + content + '</div><div class="time">' + getTime() + '</div></div>');
+	var str = '';
+
+	str += '<div id="message-' + (++messageID) + '" class="message ' + source + '"><div class="avatar"></div><div class="content">';
+	str += content;
+	str += '</div><div class="time">' + getTime() + '</div></div>';
+
+	$message.append(str);
+
 	$message.animate({ scrollTop: $message.prop("scrollHeight")}, 500);
 	return messageID;
 }
@@ -91,4 +101,31 @@ function getTime() {
 
 function replyACC() {
 	// var id = addContent('cisco', "Great question! ACC gen 3 is expected to be launched in Q2 of FY17, and I'm finding some useful information for you.");
+}
+
+function addFeedback() {
+	addContent('cisco', 'Could you please tell me is my reply helpful?<div class="feedback"><div class="button" onclick="feedback(true, this)">Yes</div><div class="button" onclick="feedback(false, this)">No</div></div>');
+}
+
+function feedback(opt, dom) {
+	if(opt) {
+		addContent('cisco', 'Thank you! Is there any other things I can help you today?');
+	} else {
+		addContent('cisco', 'Ohhhh... I\'m so sorry to hear that. For the better expierence, may I know which item(s) is not helpful?<div class="feedback"><div class="button" onclick="feedbackItem(this)">Progress</div><div class="button" onclick="feedbackItem(this)">Namecard</div><div class="button" onclick="feedbackItem(this)">File</div><div class="button highlight" onclick="feedbackItemEnd(this)">Finish</div></div>');
+	}
+	closeFeedback(dom);
+}
+
+function feedbackItem(dom) {
+	$(dom).hide();
+}
+
+function feedbackItemEnd(dom) {
+	addContent('cisco', 'Thank you! Hope I can help you with next question.');
+	closeFeedback(dom);
+}
+
+function closeFeedback(dom) {
+	$('#input').focus();
+	$(dom).closest('.feedback').slideUp();
 }
